@@ -2,13 +2,13 @@ import React, {useEffect} from 'react';
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 
-const TodoList: React.FC = () => {
-  const {page, error, loading, todos, limit} = useTypedSelector(state => state.todo)
-  const {fetchTodos, setTodoPage} = useActions()
-  const pages = [1, 2, 3, 4, 5]
+const AlbumList: React.FC = () => {
+  const {page, error, loading, albums, limit} = useTypedSelector(state => state.album);
+  const {fetchAlbums, setAlbumsPage} = useActions();
+  const pages = [1, 2, 3, 4, 5];
 
   useEffect(() => {
-      fetchTodos(page, limit)
+      fetchAlbums(page, limit)
   }, [page])
 
   if (loading) {
@@ -21,13 +21,13 @@ const TodoList: React.FC = () => {
 
   return (
     <div>
-      {todos.map(todo =>
-        <div key={todo.id}>{todo.id} - {todo.title}</div>
+      {albums.map(album =>
+        <div key={album.id}>{album.id} - {album.title}</div>
       )}
       <div style={{display: "flex"}}>
         {pages.map(p =>
           <div
-            onClick={() => setTodoPage(p)}
+            onClick={() => setAlbumsPage(p)}
             style={{border:p === page ? '2px solid green' : '1px solid gray', padding: 10}}
           >
             {p}
@@ -38,4 +38,4 @@ const TodoList: React.FC = () => {
   );
 };
 
-export default TodoList;
+export default AlbumList;

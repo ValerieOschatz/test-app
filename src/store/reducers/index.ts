@@ -1,10 +1,10 @@
 import {combineReducers} from "redux";
 import {postReducer} from "./postReducer";
-import {todoReducer} from "./todoReducer";
+import {albumReducer} from "./albumReducer";
 
 export const rootReducer = combineReducers({
   post: postReducer,
-  todo: todoReducer
+  album: albumReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>

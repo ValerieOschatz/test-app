@@ -1,5 +1,11 @@
+interface Post {
+  id: number;
+  title: string;
+  body: string;
+}
+
 export interface PostState {
-  posts: any[];
+  posts: Post[];
   loading: boolean;
   error: string | null;
   page: number;
@@ -19,7 +25,7 @@ interface FetchPostsAction {
 
 interface FetchPostsSuccessAction {
   type: PostActionTypes.FETCH_POSTS_SUCCESS;
-  payload: any[];
+  payload: Post[];
 }
 
 interface FetchPostsErrorAction {

@@ -1,7 +1,7 @@
 import * as PostActionCreators from './post'
-import * as TodoActionCreators from './todo'
+import * as AlbumActionCreators from './album'
 
 export default {
   ...PostActionCreators,
-  ...TodoActionCreators,
+  ...AlbumActionCreators,
 }
