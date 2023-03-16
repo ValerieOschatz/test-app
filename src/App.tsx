@@ -1,13 +1,16 @@
-import React from 'react';
-import UserList from "./components/UserList";
+import { Routes, Route } from 'react-router-dom';
+import Info from './components/Info';
+import PostList from "./components/PostList";
 import TodoList from "./components/TodoList";
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div>
-      <UserList/>
-      <hr/>
-      <TodoList/>
+      <Routes>
+        <Route path='/' Component={Info} />
+        <Route path='/posts' Component={PostList} />
+        <Route path='/1' Component={TodoList} />
+      </Routes>
     </div>
   );
 };
