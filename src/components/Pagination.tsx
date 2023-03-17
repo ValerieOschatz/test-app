@@ -13,29 +13,41 @@ const Pagination: React.FC<PaginationProps> = (props) => {
       arr.push(i);
     }
     setPages(arr);
-    console.log(arr)
-    console.log(minPageValue)
-    console.log(maxPageValue)
-    console.log(page);
   }, [minPageValue, maxPageValue])
 
-  const handleNextPage = (pageValue: number) => {
-    setMinPageValue(pageValue - 1);
-    setMaxPageValue(pageValue + 1);
+  const handleChangePage = (pageValue: number) => {
+    if (pageValue > 1 && pageValue < 10) {
+      setMinPageValue(pageValue - 1);
+      setMaxPageValue(pageValue + 1);
+    }
     setPage(pageValue);
+  }
+
+  const handleFirstPage = () => {
+    setMinPageValue(1);
+    setMaxPageValue(3);
+    setPage(1);
+  }
+
+  const handleLastPage = () => {
+    setMinPageValue(8);
+    setMaxPageValue(10);
+    setPage(10);
   }
 
   return (
     <div style={{display: "flex"}}>
+      <button onClick={handleFirstPage}>{'<<'}</button>
       {pages.map(p =>
         <button
           key={p}
-          onClick={() => handleNextPage(p)}
+          onClick={() => handleChangePage(p)}
           style={{border:p === page ? '2px solid green' : '1px solid gray', padding: 10}}
         >
           {p}
         </button>
       )}
+      <button onClick={handleLastPage}>{'>>'}</button>
     </div>
   );
 };
