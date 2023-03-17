@@ -12,7 +12,7 @@ export const fetchPosts = (page = 1, limit = 10) => {
     } catch (e) {
       dispatch({
         type: PostActionTypes.FETCH_POSTS_ERROR,
-        payload: 'Произошла ошибка при загрузке пользователей'
+        payload: 'Произошла ошибка при загрузке'
       })
     }
   }

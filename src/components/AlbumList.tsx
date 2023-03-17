@@ -14,6 +14,7 @@ const AlbumList: React.FC = () => {
       limit={limit}
       fetchElements={fetchAlbums}
       setPage={setAlbumsPage}
+      title={'Альбомы'}
     />
   );
 };

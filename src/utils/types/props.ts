@@ -10,5 +10,6 @@ export interface ModelListPageProps extends PaginationProps {
   elements: Post[] | Album[],
   error: string | null,
   limit: number,
-  fetchElements: (page: number, limit: number) => void
+  fetchElements: (page: number, limit: number) => void,
+  title: string,
 }

@@ -1,6 +1,7 @@
 import {useEffect} from 'react';
 import { ModelListPageProps } from '../utils/types/props';
 import Pagination from './Pagination';
+import '../styles/content.css';
 
 const ModelListPage: React.FC<ModelListPageProps> = (props) => {
   const {
@@ -9,25 +10,25 @@ const ModelListPage: React.FC<ModelListPageProps> = (props) => {
     page,
     limit,
     fetchElements,
-    setPage
+    setPage,
+    title,
   } = props;
 
   useEffect(() => {
-    fetchElements(page, limit)
-  }, [page, limit, fetchElements])
-
-  if (error) {
-    return <h1>{error}</h1>
-  }
+    fetchElements(page, limit);
+  }, [page, limit])
 
   return (
-    <div>
-      {elements.map(element =>
-      <>
-        <div key={element.id}>{element.id} - {element.title}</div>
-        {element.body && <div>{element.body}</div>}
-      </>
-      )}
+    <div className="content">
+      <h1 className="content__title">{title}</h1>
+      <ul className="content__list">
+        {!error && elements.map(element =>
+        <li key={element.id} className="content__element">
+          <p className="content__text">{element.id} - {element.title}</p>
+          {element.body && <p className="content__text">{element.body}</p>}
+        </li>
+        )}
+      </ul>
       <Pagination setPage={setPage} page={page} />
     </div>
   );

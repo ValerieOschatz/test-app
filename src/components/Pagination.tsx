@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import type { PaginationProps } from "../utils/types/props";
+import '../styles/pagination.css';
 
 const Pagination: React.FC<PaginationProps> = (props) => {
   const { setPage, page } = props;
@@ -36,18 +37,18 @@ const Pagination: React.FC<PaginationProps> = (props) => {
   }
 
   return (
-    <div style={{display: "flex"}}>
-      <button onClick={handleFirstPage}>{'<<'}</button>
+    <div className="pagination">
+      <button className="pagination__button" onClick={handleFirstPage}>{'<<'}</button>
       {pages.map(p =>
         <button
+          className={`pagination__button ${p === page && 'pagination__button_active'}`}
           key={p}
           onClick={() => handleChangePage(p)}
-          style={{border:p === page ? '2px solid green' : '1px solid gray', padding: 10}}
         >
           {p}
         </button>
       )}
-      <button onClick={handleLastPage}>{'>>'}</button>
+      <button className="pagination__button" onClick={handleLastPage}>{'>>'}</button>
     </div>
   );
 };

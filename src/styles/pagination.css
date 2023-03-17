@@ -1,0 +1,16 @@
+.pagination {
+  margin-top: 40px;
+}
+
+.pagination__button {
+  width: 40px;
+  height: 40px;
+  color: rgb(107, 117, 117);
+  border: 1px solid rgb(173, 179, 179);
+  background-color: aliceblue;
+}
+
+.pagination__button_active {
+  background-color: rgb(87, 125, 136);
+  color: aliceblue;
+}

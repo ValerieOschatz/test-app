@@ -1,22 +1,55 @@
 import { NavLink } from 'react-router-dom';
-// import './styles/main.css';
+import '../styles/navtab.css';
 
 const NavBar: React.FC = () => {
   return (
-    <nav>
-      <ul>
+    <nav className='navtab'>
+      <ul className='navtab__container'>
         <li>
-          <NavLink to='/'>
+          <NavLink
+            to='/'
+            className="navtab__link"
+            style={
+              ({isActive}) => (
+              isActive 
+              ? {
+                  borderBottom: '2px solid white'
+                }
+              :{}
+              )
+            }>
             info
           </NavLink>
         </li>
         <li>
-          <NavLink to='/posts'>
+          <NavLink
+            to='/posts'
+            className="navtab__link"
+            style={
+              ({isActive}) => (
+              isActive 
+              ? {
+                  borderBottom: '2px solid white'
+                }
+              :{}
+              )
+            }>
             posts
           </NavLink>
         </li>
         <li>
-          <NavLink to='/albums'>
+          <NavLink
+            to='/albums'
+            className="navtab__link"
+            style={
+              ({isActive}) => (
+              isActive 
+              ? {
+                  borderBottom: '2px solid white'
+                }
+              :{}
+              )
+            }>
             albums
           </NavLink>
         </li>

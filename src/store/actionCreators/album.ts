@@ -12,7 +12,7 @@ export const fetchAlbums = (page = 1, limit = 10) => {
     } catch (e) {
       dispatch({
         type: AlbumActionTypes.FETCH_ALBUMS_ERROR,
-        payload: 'Произошла ошибка при загрузке списка дел'
+        payload: 'Произошла ошибка при загрузке'
       })
     }
   }

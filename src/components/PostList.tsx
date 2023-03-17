@@ -14,6 +14,7 @@ const PostList: React.FC = () => {
       limit={limit}
       fetchElements={fetchPosts}
       setPage={setPostsPage}
+      title={'Посты'}
     />
   );
 };
