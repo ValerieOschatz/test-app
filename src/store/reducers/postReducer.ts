@@ -2,11 +2,10 @@ import {
   PostState,
   PostActionTypes,
   PostAction,
-} from '../../types/post';
+} from '../../utils/types/post';
 
 const initialState: PostState = {
   posts: [],
-  loading: false,
   error: null,
   page: 1,
   limit: 10,
@@ -15,13 +14,10 @@ const initialState: PostState = {
 export const postReducer = (state = initialState, action: PostAction): PostState => {
   switch (action.type) {
     case PostActionTypes.FETCH_POSTS:
-      return {...state, loading: true};
-
-    case PostActionTypes.FETCH_POSTS_SUCCESS:
-      return {...state, loading: false, posts: action.payload};
+      return {...state, posts: action.payload};
 
     case PostActionTypes.FETCH_POSTS_ERROR:
-      return {...state, loading: false, error: action.payload};
+      return {...state, error: action.payload};
 
     case PostActionTypes.SET_POSTS_PAGE:
       return {...state, page: action.payload};

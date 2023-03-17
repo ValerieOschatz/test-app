@@ -1,17 +1,14 @@
-import {PostAction, PostActionTypes} from "../../types/post";
+import {PostAction, PostActionTypes} from "../../utils/types/post";
 import {Dispatch} from "redux";
 import axios from "axios";
 
 export const fetchPosts = (page = 1, limit = 10) => {
   return async (dispatch: Dispatch<PostAction>) => {
     try {
-      dispatch({type: PostActionTypes.FETCH_POSTS})
       const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
         params: {_page: page, _limit: limit}
       })
-      setTimeout(() => {
-        dispatch({type: PostActionTypes.FETCH_POSTS_SUCCESS, payload: response.data})
-      }, 500)
+      dispatch({type: PostActionTypes.FETCH_POSTS, payload: response.data})
     } catch (e) {
       dispatch({
         type: PostActionTypes.FETCH_POSTS_ERROR,
