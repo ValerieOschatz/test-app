@@ -14,7 +14,7 @@ const ModelListPage: React.FC<ModelListPageProps> = (props) => {
 
   useEffect(() => {
     fetchElements(page, limit)
-  }, [page])
+  }, [page, limit, fetchElements])
 
   if (error) {
     return <h1>{error}</h1>
@@ -23,7 +23,10 @@ const ModelListPage: React.FC<ModelListPageProps> = (props) => {
   return (
     <div>
       {elements.map(element =>
+      <>
         <div key={element.id}>{element.id} - {element.title}</div>
+        {element.body && <div>{element.body}</div>}
+      </>
       )}
       <Pagination setPage={setPage} page={page} />
     </div>
