@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import '../styles/navtab.css';
 
-const NavBar: React.FC = () => {
+const NavTab: React.FC = () => {
   return (
     <nav className='navtab'>
       <ul className='navtab__container'>
@@ -58,4 +58,4 @@ const NavBar: React.FC = () => {
   );
 };
 
-export default NavBar;
+export default NavTab;
