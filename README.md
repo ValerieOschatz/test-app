@@ -1,5 +1,5 @@
 #### [Ссылка на проект](https://valerieoschatz.github.io/test-app/)
-- тестовое приложение на технологиях typescript, react + redux
+- тестовое приложение (typescript, react + redux)
 
 
 ### Стек
