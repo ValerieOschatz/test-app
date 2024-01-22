@@ -2,16 +2,12 @@
 - тестовое приложение (typescript, react + redux)
 
 
-### Стек
-
-* Typescript
-* HTML
-* CSS
-
-
 ### Технологии
 
+* Typescript
 * React.js
 * Redux
 * React Router
 * API
+* HTML
+* CSS
